@@ -1,10 +1,16 @@
 public class Main {
     public static void main(String[] args) {
-        //Formatted Strings are used to insert values into placeholders
-        String name = "Diya Sujith";
-        int age = 19;
-        double cgpa = 9.3;
-        System.out.println(String.format(
-            "My name is %s. I am %d years old. My cgpa is %f",name, age, cgpa));
-        }
+
+        String string1 = new String("abc");
+        String string2 = new String ("abc");
+
+        //equality comparison operator compares the objects
+        System.out.println(string1 == string2);
+
+        //equals method compares the values
+        System.out.println(string1.equals(string2));
+
+        //ignore case-sensitivity
+        System.out.println(string1.equalsIgnoreCase(string2));
+    }
 }
