@@ -4,21 +4,43 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("What is your name? ");  //print keeps the cursor on the same line
-        String name = scanner.nextLine();   //Read a line of text
-        System.out.println("Your name is "+name);
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+        scanner.nextLine();
 
-        System.out.printf("Hello %s. How old are you? ", name); //Formatted printing
-        int age = scanner.nextInt();
-        System.out.printf("You are %d years old. ", age);
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+        scanner.nextLine();
 
-        scanner.nextLine(); //Consumes leftover newline
+        System.out.print("What operation do you want to perform? ");
+        char operation = scanner.next().charAt(0);
 
-        System.out.println("What programming language do you prefer? ");
-        String lang = scanner.nextLine();
+        if (operation == '+') {
+            System.out.printf("%f + %f = %f", num1, num2, num1+num2);
+        }
 
-        System.out.printf("You prefer %s",lang);
+        else if (operation == '-') {
+            System.out.printf("%f - %f = %f", num1, num2, num1-num2);
+        }
 
-        scanner.close();  //releases system resources and prevents potential memory leaks.
+        else if (operation == '*') {
+            System.out.printf("%f * %f = %f", num1, num2, num1*num2);
+        }
+
+        else if (operation == '/') {
+            if (num2 == 0) {
+                System.out.println("Cannot divide by 0");
+            }
+            else {
+                System.out.printf("%f / %f = %f", num1, num2, num1/num2);
+            }
+        }
+        
+        else {
+            System.out.printf("%c is not a supported operation.", operation);
+        }
+
+        scanner.close();
+
     }
 }
